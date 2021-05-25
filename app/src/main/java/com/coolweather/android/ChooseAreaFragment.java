@@ -134,7 +134,7 @@ public class ChooseAreaFragment extends Fragment {
             listView.setSelection(0);   //数据重新展示
             currentLevel = LEVEL_PROVINCE;
         } else {
-            String address = "http://10.0.2.2/City.json";
+            String address = "http://10.0.2.2/Province.json";
             queryFromServer(address, "province");
         }
     }
@@ -156,7 +156,7 @@ public class ChooseAreaFragment extends Fragment {
             currentLevel = LEVEL_CITY;
         } else {
             int provinceCode = selectedProvince.getProvinceCode();
-            String address = "http://guolin.tech/api/china/" + provinceCode;
+            String address = "http://10.0.2.2/City.json";
             queryFromServer(address, "city");
         }
     }
@@ -179,7 +179,7 @@ public class ChooseAreaFragment extends Fragment {
         } else {
             int provinceCode = selectedProvince.getProvinceCode();
             int cityCode = selectedCity.getCityCode();
-            String address = "http://guolin.tech/api/china" + provinceCode + "/" + cityCode;
+            String address = "http://10.0.2.2/County.json";
             queryFromServer(address, "county");
         }
     }
